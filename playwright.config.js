@@ -27,6 +27,7 @@ export default defineConfig({
   reporter: [
     ['html'],
     ['allure-playwright'],
+    ['junit', { outputFile: 'junit-results/results.xml' }],
     ['monocart-reporter', {
       name: 'Playwright Test Report',
       outputFile: './monocart-report/index.html'

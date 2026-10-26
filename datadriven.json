@@ -1,0 +1,37 @@
+[
+    {
+        "scenario": "Wrong username",
+        "username": "WrongUser123",
+        "password": "admin123",
+        "expectedResult": "error",
+        "expectedMessage": "Invalid credentials"
+    },
+    {
+        "scenario": "Wrong password",
+        "username": "Admin",
+        "password": "wrongpass123",
+        "expectedResult": "error",
+        "expectedMessage": "Invalid credentials"
+    },
+    {
+        "scenario": "Successful login",
+        "username": "Admin",
+        "password": "admin123",
+        "expectedResult": "success",
+        "expectedMessage": ""
+    },
+    {
+        "scenario": "Blocked username",
+        "username": "BlockedUser01",
+        "password": "admin123",
+        "expectedResult": "error",
+        "expectedMessage": "Invalid credentials"
+    },
+    {
+        "scenario": "Inactive username",
+        "username": "InactiveUser01",
+        "password": "admin123",
+        "expectedResult": "error",
+        "expectedMessage": "Invalid credentials"
+    }
+]

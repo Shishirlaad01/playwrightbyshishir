@@ -1,0 +1,1 @@
+[Successful login] Login successful - Dashboard opened

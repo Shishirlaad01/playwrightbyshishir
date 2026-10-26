@@ -1,13 +1,12 @@
 const {test, expect} = require('@playwright/test');
+// eBay blocks headless/automated browsers (HTTP 403), so this uses a practice site built for automation
 test("mouse hover", async ({ page }) => {
-await page.goto("https://www.ebay.com/");
-await page.waitForTimeout(200);
-await page.locator('span:has-text("Motors")').hover();
-await page.waitForTimeout(200);
-await page.getByRole('link', { name: 'Cars and trucks' }).click();
-await page.waitForURL("https://www.ebay.com/b/Cars-Trucks/6001/bn_1865117");
-await page.waitForTimeout(200);
+await page.goto("https://the-internet.herokuapp.com/hovers");
+const firstUser = page.locator('.figure').first();
+await firstUser.hover();
+await expect(firstUser.getByText('name: user1')).toBeVisible();
+await firstUser.getByRole('link', { name: 'View profile' }).click();
 
-await expect(page).toHaveURL("https://www.ebay.com/b/Cars-Trucks/6001/bn_1865117");
+await expect(page).toHaveURL("https://the-internet.herokuapp.com/users/1");
 
 });
